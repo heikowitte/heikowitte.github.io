@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heiko Witte</title>
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+		background: linear-gradient(135deg, #3494e6, #ec6ead);
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+	}
+
+	.card {
+		width: 300px;
+		background-color: rgba(255, 255, 255, 0.9); /* Translucent white background */
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on borders */
+		margin: 50px auto;
+		padding: 20px;
+		border-radius: 10px;
+		text-align: center;
+	}
+	
+	.profile-img {
+		width: 200px; /* Adjust size as needed */
+		height: 200px; /* Adjust size as needed */
+		border-radius: 50%; /* Create a circular shape */
+		overflow: hidden; /* Hide overflow content */
+		background-image: url('assets/profile_picture.jpeg');
+		background-size: cover;
+		background-position: center;
+		margin: -100px auto 20px; /* Position the image */
+	}
+	
+	.name {
+		font-size: 30px;
+		margin-top: 10px;
+	}
+	
+	.social-icons {
+		margin-top: 20px;
+	}
+	
+	.social-icons a {
+		color: #333;
+		text-decoration: none;
+		margin: 0 5px;
+	}
+	
+	.icon-link {
+		color: #dddddd; /* Change the color of the link */
+		text-decoration: none; /* Remove underline from the link */
+	}
+</style>
+</head>
+<body>
+	<script src="https://kit.fontawesome.com/77c237f7f9.js" crossorigin="anonymous"></script>
+	
+	<div class="card">
+		<div class="profile-img"></div>
+		<h1 class="name"><b>Heiko Witte</b></h1>
+		Software Engineer
+		<div class="social-icons">
+			<a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+			<a href="https://github.com/heikowitte"><i class="fa-brands fa-github"></i></a>
+			<a href="mailto:hello@heikowitte.com"><i class="fa-regular fa-envelope"></i></a>
+		</div>
+	</div>
+</body>
+</html>
