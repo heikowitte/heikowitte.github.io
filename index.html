@@ -188,6 +188,59 @@
             border-radius: 0 0 20px 20px;
         }
 
+        /* Additional Features Section */
+        .additional-features {
+            padding: 80px 20px 120px;
+            background-color: var(--bg-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            background-color: var(--bg-primary);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .feature-item p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .feature-icon {
+                filter: invert(1);
+            }
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -254,6 +307,23 @@
                 width: 240px;
                 height: 480px;
             }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .feature-item {
+                padding: 30px;
+            }
+
+            .feature-item h3 {
+                font-size: 1.5rem;
+            }
+
+            .feature-item p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -273,13 +343,24 @@
     <section class="features">
         <div class="container">
             <h2 class="section-title">Built for Mental Clarity</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 80px; max-width: 700px; margin-left: auto; margin-right: auto;">Jotio isn't another notes app trying to be your second brain—it's the place for thoughts that matter right now, not forever.</p>
+            <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 80px; max-width: 700px; margin-left: auto; margin-right: auto;">Jotio isn't another notes app trying to be your second brain—it's the place for thoughts that matter temporarily, not forever.</p>
 
             <!-- Capture Feature -->
             <div class="feature">
                 <div class="feature-content">
                     <h2>Capture</h2>
-                    <p>Jot down ideas, thoughts, and quick notes in seconds—from your iPhone or Apple Watch. Color-code them for instant visual organization. Perfect for capturing fleeting ideas before they disappear—whether it's a quick shopping note, a meeting thought, or that brilliant idea that just struck you.</p>
+                    <p>Jot down ideas in seconds with the quick capture field. Pick a color dot to instantly organize your thought—no typing categories, no choosing folders. Just tap, type, and move on. Perfect for capturing fleeting ideas before they disappear.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                </div>
+            </div>
+
+            <!-- Organize Feature -->
+            <div class="feature">
+                <div class="feature-content">
+                    <h2>Organize</h2>
+                    <p>Your inbox fills with colorful notes that are easy to scan at a glance. Filter by color to focus on what matters right now—work tasks, personal reminders, or quick ideas. No folders. No tags. No notebooks. Just simple, visual organization that actually works.</p>
                 </div>
                 <div class="feature-image">
                     <div class="screenshot-placeholder">iPhone Screenshot</div>
@@ -290,32 +371,60 @@
             <div class="feature">
                 <div class="feature-content">
                     <h2>Review</h2>
-                    <p>Swipe through a delightful stack of cards on your iPhone. Flip through your notes to evaluate ideas, or swipe to decide what to do with each one. No folders. No tags. No notebooks. Just a beautifully simple interface with color-coding to help you scan what matters. Keep what's still relevant. Let the rest fade away naturally.</p>
+                    <p>Swipe through a delightful stack of cards. Flip through your notes to evaluate ideas, or swipe to decide what to do with each one. Share what needs action. Delete what's done. Keep what still matters. Let the rest fade away naturally.</p>
                 </div>
                 <div class="feature-image">
                     <div class="screenshot-placeholder">iPhone Screenshot</div>
                 </div>
             </div>
 
-            <!-- Share Feature -->
+            <!-- Smart Cleanup Feature -->
             <div class="feature">
                 <div class="feature-content">
-                    <h2>Share</h2>
-                    <p>Share notes quickly when you need to act on them. Send that shopping list to your partner, share meeting notes with your team, or forward that brilliant idea while it's still fresh. Jotio makes it simple to move thoughts from your mind to action, right when you need to.</p>
+                    <h2>Smart Cleanup</h2>
+                    <p>Notes you haven't revisited in 30 days quietly disappear. No guilt. No clutter. Your inbox stays light, your mind stays clear. The secret to mental clarity: thoughts that matter temporarily, not forever.</p>
                 </div>
                 <div class="feature-image">
                     <div class="screenshot-placeholder">iPhone Screenshot</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Auto Cleanup Feature -->
-            <div class="feature">
-                <div class="feature-content">
-                    <h2>Auto Cleanup</h2>
-                    <p>The secret to mental clarity: Notes you haven't revisited in 30 days quietly disappear. No guilt. No clutter. No endless scrolling through notes from three years ago. Your inbox stays light. Your mind stays clear. Perfect for anyone tired of digital hoarding—these are thoughts that matter now, not forever.</p>
+    <!-- Additional Features Section -->
+    <section class="additional-features">
+        <div class="container">
+            <h2 class="section-title">Seamlessly Integrated</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <img src="assets/cloud.fill.svg" alt="" class="feature-icon">
+                    <h3>iCloud Sync</h3>
+                    <p>Capture on your Apple Watch, find it instantly in your iPhone inbox. Your thoughts sync seamlessly across all your devices.</p>
                 </div>
-                <div class="feature-image">
-                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                <div class="feature-item">
+                    <img src="assets/square.grid.2x2.svg" alt="" class="feature-icon">
+                    <h3>Widgets</h3>
+                    <p>See your notes at a glance on your home screen. Quick capture from Control Center when inspiration strikes.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/applewatch.side.right.svg" alt="" class="feature-icon">
+                    <h3>Apple Watch</h3>
+                    <p>Quickly capture notes right from your wrist with the native watch app. Add a complication to your watch face for instant access.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/hand.point.up.left.fill.svg" alt="" class="feature-icon">
+                    <h3>Quick Actions</h3>
+                    <p>Long press the app icon to jump straight into capture mode, review your notes, or search. Fast access when you need it.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/bell.fill.svg" alt="" class="feature-icon">
+                    <h3>Notifications</h3>
+                    <p>Daily and weekly review reminders to help you stay on top of your thoughts. Stay in control of what matters without letting notes pile up.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/magnifyingglass.svg" alt="" class="feature-icon">
+                    <h3>Spotlight</h3>
+                    <p>Search and open your notes directly from Spotlight. Find what you need instantly without even opening the app.</p>
                 </div>
             </div>
         </div>
