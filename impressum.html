@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - Jotio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent: #007aff;
+            --accent-hover: #0051d5;
+            --border: #d2d2d7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #000000;
+                --bg-secondary: #1d1d1f;
+                --text-primary: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --accent: #0a84ff;
+                --accent-hover: #409cff;
+                --border: #424245;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-hover);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        address {
+            font-style: normal;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 80px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <h1>Impressum</h1>
+
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <address>
+            <p>
+                Heiko Witte<br>
+                Rohrbachstraße 9<br>
+                60389 Frankfurt am Main<br>
+                Deutschland
+            </p>
+        </address>
+
+        <h2>Kontakt</h2>
+        <p>
+            E-Mail: hello@getjotio.app
+        </p>
+
+        <h2>Umsatzsteuer-ID</h2>
+        <p>
+            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+            DE123456789
+        </p>
+
+        <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+        <address>
+            <p>
+                Heiko Witte<br>
+                Rohrbachstraße 9<br>
+                60389 Frankfurt am Main
+            </p>
+        </address>
+
+        <h2>EU-Streitschlichtung</h2>
+        <p>
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" style="color: var(--accent);">https://ec.europa.eu/consumers/odr/</a><br>
+            Unsere E-Mail-Adresse finden Sie oben im Impressum.
+        </p>
+
+        <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+        <p>
+            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <p>&copy; 2026 Jotio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

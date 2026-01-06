@@ -1,76 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heiko Witte</title>
-<style>
-	body {
-		margin: 0;
-		padding: 0;
-		font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-		background: linear-gradient(135deg, #3494e6, #ec6ead);
-		height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		position: relative;
-	}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jotio - Your Intelligent Note-Taking Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	.card {
-		width: 300px;
-		background-color: rgba(255, 255, 255, 0.9); /* Translucent white background */
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on borders */
-		margin: 50px auto;
-		padding: 20px;
-		border-radius: 10px;
-		text-align: center;
-	}
-	
-	.profile-img {
-		width: 200px; /* Adjust size as needed */
-		height: 200px; /* Adjust size as needed */
-		border-radius: 50%; /* Create a circular shape */
-		overflow: hidden; /* Hide overflow content */
-		background-image: url('assets/profile_picture.jpeg');
-		background-size: cover;
-		background-position: center;
-		margin: -100px auto 20px; /* Position the image */
-	}
-	
-	.name {
-		font-size: 30px;
-		margin-top: 10px;
-	}
-	
-	.social-icons {
-		margin-top: 20px;
-	}
-	
-	.social-icons a {
-		color: #333;
-		text-decoration: none;
-		margin: 0 5px;
-	}
-	
-	.icon-link {
-		color: #dddddd; /* Change the color of the link */
-		text-decoration: none; /* Remove underline from the link */
-	}
-</style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent: #007aff;
+            --accent-hover: #0051d5;
+            --border: #d2d2d7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #000000;
+                --bg-secondary: #1d1d1f;
+                --text-primary: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --accent: #0a84ff;
+                --accent-hover: #409cff;
+                --border: #424245;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 120px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            border-radius: 27px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .app-icon:hover {
+            transform: scale(1.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .app-icon.light {
+                display: none;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .app-icon.dark {
+                display: none;
+            }
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 122, 255, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background-color: var(--bg-primary);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 80px;
+            color: var(--text-primary);
+        }
+
+        .feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .feature:nth-child(even) .feature-content {
+            order: 2;
+        }
+
+        .feature:nth-child(even) .feature-image {
+            order: 1;
+        }
+
+        .feature-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .feature-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .feature-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .screenshot-placeholder {
+            width: 280px;
+            height: 560px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border) 100%);
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border: 8px solid var(--text-primary);
+            position: relative;
+        }
+
+        .screenshot-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 25px;
+            background-color: var(--text-primary);
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .feature {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+
+            .feature:nth-child(even) .feature-content {
+                order: 1;
+            }
+
+            .feature:nth-child(even) .feature-image {
+                order: 2;
+            }
+
+            .feature-content h2 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .feature-content p {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .screenshot-placeholder {
+                width: 240px;
+                height: 480px;
+            }
+        }
+    </style>
 </head>
 <body>
-	<script src="https://kit.fontawesome.com/77c237f7f9.js" crossorigin="anonymous"></script>
-	
-	<div class="card">
-		<div class="profile-img"></div>
-		<h1 class="name"><b>Heiko Witte</b></h1>
-		Software Engineer
-		<div class="social-icons">
-			<a href="https://www.linkedin.com/in/heiko-witte-7b748922b/"><i class="fa-brands fa-linkedin"></i></a>
-			<a href="https://github.com/heikowitte"><i class="fa-brands fa-github"></i></a>
-		</div>
-	</div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="assets/AppIcon-iOS-Default-256x256@2x.png" alt="Jotio App Icon" class="app-icon light">
+            <img src="assets/AppIcon-iOS-Dark-256x256@2x.png" alt="Jotio App Icon" class="app-icon dark">
+            <h1>Jotio</h1>
+            <p class="tagline">Your intelligent note-taking companion</p>
+            <a href="#" class="cta-button">Download on the App Store</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+
+            <!-- Capture Feature -->
+            <div class="feature">
+                <div class="feature-content">
+                    <h2>Capture</h2>
+                    <p>Effortlessly capture your thoughts, ideas, and moments as they happen. With lightning-fast note creation and intuitive voice recording, you'll never miss an important detail. Whether you're in a meeting, on a walk, or struck by sudden inspiration, Jotio is ready when you are.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                </div>
+            </div>
+
+            <!-- Review Feature -->
+            <div class="feature">
+                <div class="feature-content">
+                    <h2>Review</h2>
+                    <p>Organize and review your notes with powerful search and smart categorization. Find exactly what you're looking for in seconds with intelligent filters and tags. Your notes are beautifully organized and always accessible, making it easy to reflect on past ideas and build upon them.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                </div>
+            </div>
+
+            <!-- Share Feature -->
+            <div class="feature">
+                <div class="feature-content">
+                    <h2>Share</h2>
+                    <p>Collaborate seamlessly with others by sharing your notes and ideas instantly. Export to your favorite apps or send beautifully formatted notes via email or message. Jotio makes it simple to turn your private thoughts into shared knowledge, perfect for teams and creative partnerships.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                </div>
+            </div>
+
+            <!-- Auto Cleanup Feature -->
+            <div class="feature">
+                <div class="feature-content">
+                    <h2>Auto Cleanup</h2>
+                    <p>Let Jotio intelligently manage your note library with automatic cleanup and archiving. Set custom rules for how long to keep notes, and let the app handle the rest. Focus on creating without worrying about clutter—Jotio keeps your workspace clean and organized automatically.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <p>&copy; 2026 Jotio. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
