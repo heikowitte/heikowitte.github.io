@@ -1,76 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heiko Witte</title>
-<style>
-	body {
-		margin: 0;
-		padding: 0;
-		font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-		background: linear-gradient(135deg, #3494e6, #ec6ead);
-		height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		position: relative;
-	}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jotio - Your Intelligent Note-Taking Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	.card {
-		width: 300px;
-		background-color: rgba(255, 255, 255, 0.9); /* Translucent white background */
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on borders */
-		margin: 50px auto;
-		padding: 20px;
-		border-radius: 10px;
-		text-align: center;
-	}
-	
-	.profile-img {
-		width: 200px; /* Adjust size as needed */
-		height: 200px; /* Adjust size as needed */
-		border-radius: 50%; /* Create a circular shape */
-		overflow: hidden; /* Hide overflow content */
-		background-image: url('assets/profile_picture.jpeg');
-		background-size: cover;
-		background-position: center;
-		margin: -100px auto 20px; /* Position the image */
-	}
-	
-	.name {
-		font-size: 30px;
-		margin-top: 10px;
-	}
-	
-	.social-icons {
-		margin-top: 20px;
-	}
-	
-	.social-icons a {
-		color: #333;
-		text-decoration: none;
-		margin: 0 5px;
-	}
-	
-	.icon-link {
-		color: #dddddd; /* Change the color of the link */
-		text-decoration: none; /* Remove underline from the link */
-	}
-</style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent: #007aff;
+            --accent-hover: #0051d5;
+            --border: #d2d2d7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #000000;
+                --bg-secondary: #1d1d1f;
+                --text-primary: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --accent: #0a84ff;
+                --accent-hover: #409cff;
+                --border: #424245;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 120px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            border-radius: 27px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .app-icon:hover {
+            transform: scale(1.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .app-icon.light {
+                display: none;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .app-icon.dark {
+                display: none;
+            }
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 122, 255, 0.4);
+        }
+
+        .cta-button.coming-soon {
+            cursor: default;
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        .cta-button.coming-soon:hover {
+            background-color: var(--accent);
+            transform: none;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background-color: var(--bg-primary);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 80px;
+            color: var(--text-primary);
+        }
+
+        .feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .feature:nth-child(even) .feature-content {
+            order: 2;
+        }
+
+        .feature:nth-child(even) .feature-image {
+            order: 1;
+        }
+
+        .feature-content {
+            position: relative;
+            overflow: visible;
+        }
+
+        .feature-content::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            top: -400px;
+            left: -350px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .feature-content::before {
+                background: radial-gradient(circle, rgba(175, 82, 222, 0.3) 0%, rgba(175, 82, 222, 0.15) 30%, transparent 60%);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .feature-content::before {
+                display: none;
+            }
+        }
+
+        .feature-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .screenshot-placeholder {
+            width: 280px;
+            height: 560px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border) 100%);
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border: 8px solid var(--text-primary);
+            position: relative;
+        }
+
+        .screenshot-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 25px;
+            background-color: var(--text-primary);
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* Additional Features Section */
+        .additional-features {
+            padding: 80px 20px 120px;
+            background-color: var(--bg-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            background-color: var(--bg-primary);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .feature-item p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .feature-icon {
+                filter: invert(1);
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .feature {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+
+            .feature:nth-child(even) .feature-content {
+                order: 1;
+            }
+
+            .feature:nth-child(even) .feature-image {
+                order: 2;
+            }
+
+            .feature-content h2 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .feature-content p {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .screenshot-placeholder {
+                width: 240px;
+                height: 480px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .feature-item {
+                padding: 30px;
+            }
+
+            .feature-item h3 {
+                font-size: 1.5rem;
+            }
+
+            .feature-item p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-	<script src="https://kit.fontawesome.com/77c237f7f9.js" crossorigin="anonymous"></script>
-	
-	<div class="card">
-		<div class="profile-img"></div>
-		<h1 class="name"><b>Heiko Witte</b></h1>
-		Software Engineer
-		<div class="social-icons">
-			<a href="https://www.linkedin.com/in/heiko-witte-7b748922b/"><i class="fa-brands fa-linkedin"></i></a>
-			<a href="https://github.com/heikowitte"><i class="fa-brands fa-github"></i></a>
-		</div>
-	</div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="assets/AppIcon-iOS-Default-256x256@2x.png" alt="Jotio App Icon" class="app-icon light">
+            <img src="assets/AppIcon-iOS-Dark-256x256@2x.png" alt="Jotio App Icon" class="app-icon dark">
+            <h1>Jotio</h1>
+            <p class="tagline">Think. Capture. Move On.</p>
+            <div class="cta-button coming-soon">Coming Soon</div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Built for Mental Clarity</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 80px; max-width: 700px; margin-left: auto; margin-right: auto;">Jotio isn't another notes app trying to be your second brain—it's the place for thoughts that matter temporarily, not forever.</p>
+
+            <!-- Capture Feature -->
+            <div class="feature">
+                <div class="feature-content">
+                    <h2>Capture</h2>
+                    <p>Jot down ideas in seconds with the quick capture field. Pick a color dot to instantly organize your thought—no typing categories, no choosing folders. Just tap, type, and move on. Perfect for capturing fleeting ideas before they disappear.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                </div>
+            </div>
+
+            <!-- Organize Feature -->
+            <div class="feature">
+                <div class="feature-content">
+                    <h2>Organize</h2>
+                    <p>Your inbox fills with colorful notes that are easy to scan at a glance. Filter by color to focus on what matters right now—work tasks, personal reminders, or quick ideas. No folders. No tags. No notebooks. Just simple, visual organization that actually works.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                </div>
+            </div>
+
+            <!-- Review Feature -->
+            <div class="feature">
+                <div class="feature-content">
+                    <h2>Review</h2>
+                    <p>Swipe through a delightful stack of cards. Flip through your notes to evaluate ideas, or swipe to decide what to do with each one. Share what needs action. Delete what's done. Keep what still matters. Let the rest fade away naturally.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                </div>
+            </div>
+
+            <!-- Smart Cleanup Feature -->
+            <div class="feature">
+                <div class="feature-content">
+                    <h2>Smart Cleanup</h2>
+                    <p>Notes you haven't revisited in 30 days quietly disappear. No guilt. No clutter. Your inbox stays light, your mind stays clear. The secret to mental clarity: thoughts that matter temporarily, not forever.</p>
+                </div>
+                <div class="feature-image">
+                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Features Section -->
+    <section class="additional-features">
+        <div class="container">
+            <h2 class="section-title">Seamlessly Integrated</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <img src="assets/cloud.fill.svg" alt="" class="feature-icon">
+                    <h3>iCloud Sync</h3>
+                    <p>Capture on your Apple Watch, find it instantly in your iPhone inbox. Your thoughts sync seamlessly across all your devices.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/square.grid.2x2.svg" alt="" class="feature-icon">
+                    <h3>Widgets</h3>
+                    <p>See your notes at a glance on your home screen. Quick capture from Control Center when inspiration strikes.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/applewatch.side.right.svg" alt="" class="feature-icon">
+                    <h3>Apple Watch</h3>
+                    <p>Quickly capture notes right from your wrist with the native watch app. Add a complication to your watch face for instant access.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/hand.point.up.left.fill.svg" alt="" class="feature-icon">
+                    <h3>Quick Actions</h3>
+                    <p>Long press the app icon to jump straight into capture mode, review your notes, or search. Fast access when you need it.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/bell.fill.svg" alt="" class="feature-icon">
+                    <h3>Notifications</h3>
+                    <p>Daily and weekly review reminders to help you stay on top of your thoughts. Stay in control of what matters without letting notes pile up.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/magnifyingglass.svg" alt="" class="feature-icon">
+                    <h3>Spotlight</h3>
+                    <p>Search and open your notes directly from Spotlight. Find what you need instantly without even opening the app.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <p>&copy; 2026 Jotio. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
