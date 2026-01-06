@@ -206,31 +206,23 @@
             align-items: center;
         }
 
-        .screenshot-placeholder {
+        .screenshot {
             width: 280px;
-            height: 560px;
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border) 100%);
-            border-radius: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
+            height: auto;
+            border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-            border: 8px solid var(--text-primary);
-            position: relative;
         }
 
-        .screenshot-placeholder::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 25px;
-            background-color: var(--text-primary);
-            border-radius: 0 0 20px 20px;
+        @media (prefers-color-scheme: dark) {
+            .screenshot.light {
+                display: none;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .screenshot.dark {
+                display: none;
+            }
         }
 
         /* Additional Features Section */
@@ -348,9 +340,8 @@
                 font-size: 2rem;
             }
 
-            .screenshot-placeholder {
+            .screenshot {
                 width: 240px;
-                height: 480px;
             }
 
             .features-grid {
@@ -397,7 +388,8 @@
                     <p>Jot down ideas in seconds with the quick capture field. Pick a color dot to instantly organize your thought—no typing categories, no choosing folders. Just tap, type, and move on. Perfect for capturing fleeting ideas before they disappear.</p>
                 </div>
                 <div class="feature-image">
-                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                    <img src="assets/screenshots/capture-light.PNG" alt="Jotio Capture Feature" class="screenshot light">
+                    <img src="assets/screenshots/capture-dark.PNG" alt="Jotio Capture Feature" class="screenshot dark">
                 </div>
             </div>
 
@@ -408,7 +400,8 @@
                     <p>Your inbox fills with colorful notes that are easy to scan at a glance. Filter by color to focus on what matters right now—work tasks, personal reminders, or quick ideas. No folders. No tags. No notebooks. Just simple, visual organization that actually works.</p>
                 </div>
                 <div class="feature-image">
-                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                    <img src="assets/screenshots/organize-light.PNG" alt="Jotio Organize Feature" class="screenshot light">
+                    <img src="assets/screenshots/organize-dark.PNG" alt="Jotio Organize Feature" class="screenshot dark">
                 </div>
             </div>
 
@@ -419,7 +412,8 @@
                     <p>Swipe through a delightful stack of cards. Flip through your notes to evaluate ideas, or swipe to decide what to do with each one. Share what needs action. Delete what's done. Keep what still matters. Let the rest fade away naturally.</p>
                 </div>
                 <div class="feature-image">
-                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                    <img src="assets/screenshots/review-light.PNG" alt="Jotio Review Feature" class="screenshot light">
+                    <img src="assets/screenshots/review-dark.PNG" alt="Jotio Review Feature" class="screenshot dark">
                 </div>
             </div>
 
@@ -430,7 +424,8 @@
                     <p>Notes you haven't revisited in 30 days quietly disappear. No guilt. No clutter. Your inbox stays light, your mind stays clear. The secret to mental clarity: thoughts that matter temporarily, not forever.</p>
                 </div>
                 <div class="feature-image">
-                    <div class="screenshot-placeholder">iPhone Screenshot</div>
+                    <img src="assets/screenshots/cleanup-light.PNG" alt="Jotio Smart Cleanup Feature" class="screenshot light">
+                    <img src="assets/screenshots/cleanup-dark.PNG" alt="Jotio Smart Cleanup Feature" class="screenshot dark">
                 </div>
             </div>
         </div>
