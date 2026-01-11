@@ -128,6 +128,13 @@
             letter-spacing: -0.02em;
         }
 
+        .hero-headline {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
         .tagline {
             font-size: 1.5rem;
             color: var(--text-secondary);
@@ -179,6 +186,92 @@
             font-weight: 700;
             margin-bottom: 40px;
             color: var(--text-primary);
+        }
+
+        .value-prop,
+        .problem-statement,
+        .benefit-statement {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .value-prop {
+            margin-bottom: 20px;
+        }
+
+        .problem-statement {
+            margin-bottom: 20px;
+        }
+
+        .benefit-statement {
+            margin-bottom: 20px;
+        }
+
+        .benefits-list {
+            max-width: 700px;
+            margin: 0 auto 80px;
+            padding-left: 0;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .benefits-list li {
+            margin-bottom: 0;
+            padding: 18px 20px;
+            background-color: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .benefits-list strong,
+        .problem-list strong {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .box-icon {
+            width: 28px;
+            height: 28px;
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .box-icon {
+                filter: invert(1);
+            }
+        }
+
+        .problem-list {
+            max-width: 700px;
+            margin: 0 auto 80px;
+            padding-left: 0;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .problem-list li {
+            margin-bottom: 0;
+            padding: 18px 20px;
+            background-color: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
         }
 
         .feature {
@@ -398,8 +491,20 @@
                 font-size: 2.5rem;
             }
 
+            .hero-headline {
+                font-size: 1.6rem;
+            }
+
             .tagline {
                 font-size: 1.2rem;
+            }
+
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-list {
+                grid-template-columns: 1fr;
             }
 
             .feature {
@@ -460,24 +565,76 @@
             <img src="assets/AppIcon-iOS-Default-256x256@2x.png" alt="Jotio App Icon" class="app-icon light">
             <img src="assets/AppIcon-iOS-Dark-256x256@2x.png" alt="Jotio App Icon" class="app-icon dark">
             <h1>Jotio</h1>
-            <p class="tagline">Your Digital Working Memory.</p>
-            <div class="cta-button coming-soon">Coming Soon</div>
+            <div class="hero-headline">Capture Your Thoughts. Automatically Decluttered.</div>
+            <p class="tagline">Jotio is the only note app that parks your spontaneous ideas and automatically cleans up after 30 days – keep your mind clear and focused.</p>
+            <a class="cta-button" href="https://testflight.apple.com/join/apjWWgb6">Join Beta on TestFlight</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Your Notes Fail You</h2>
+            <p class="problem-statement">This is the problem: traditional notes apps turn quick thoughts into a never-ending backlog that you never return to.</p>
+            <ul class="problem-list">
+                <li>
+                    <img src="assets/list.bullet.rectangle.svg" alt="" class="box-icon">
+                    <strong>Endless Lists</strong>
+                    Ideas get lost in never-ending notes.
+                </li>
+                <li>
+                    <img src="assets/tray.full.fill.svg" alt="" class="box-icon">
+                    <strong>Inbox Overload</strong>
+                    Your note inbox becomes overwhelming.
+                </li>
+                <li>
+                    <img src="assets/hammer.fill.svg" alt="" class="box-icon">
+                    <strong>Heavy Maintenance</strong>
+                    Organization becomes complicated and time consuming.
+                </li>
+                <li>
+                    <img src="assets/eye.slash.fill.svg" alt="" class="box-icon">
+                    <strong>Low Focus</strong>
+                    Clutter competes with the thoughts that actually matter.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Jotio Makes Notes Effortless</h2>
+            <p class="benefit-statement">Jotio stays deliberately simple, so capture stays fast and your mind stays clear.</p>
+            <ul class="benefits-list">
+                <li>
+                    <img src="assets/keyboard.svg" alt="" class="box-icon">
+                    <strong>Quick Capture</strong>
+                    Capture ideas in seconds on iPhone or Apple Watch.
+                </li>
+                <li>
+                    <img src="assets/clock.arrow.trianglehead.counterclockwise.rotate.90.svg" alt="" class="box-icon">
+                    <strong>Auto-Cleanup</strong>
+                    Never worry about clutter – old notes are removed automatically after 30 days.
+                </li>
+                <li>
+                    <img src="assets/checkmark.circle.fill.svg" alt="" class="box-icon">
+                    <strong>Review Mode</strong>
+                    Quickly review and process your thoughts without mental overload.
+                </li>
+                <li>
+                    <img src="assets/magnifyingglass.svg" alt="" class="box-icon">
+                    <strong>Widgets &amp; Spotlight</strong>
+                    Your ideas are always accessible, right where you need them.
+                </li>
+            </ul>
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2 class="section-title">Built for Mental Clarity</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto;">Jotio is for spontaneous ideas, random thoughts, and quick captures—things you need to jot down now and review later. It isn't another notes app trying to be your second brain. It's the place for
-            thoughts that matter temporarily, not forever.</p> 
-            
-            <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                <b>Capture. Review. Share or Let go.</b>
-            </p>
-            
-            <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 80px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Jot down ideas in seconds, review your inbox when you need to, and share what matters to your permanent tools. Notes you haven't opened in 30 days quietly disappear—unless you decide they're worth keeping.</p>
+            <h2 class="section-title">How Jotio Works</h2>
 
             <!-- Capture Feature -->
             <div class="feature">
@@ -548,7 +705,7 @@
             <!-- Smart Cleanup Feature -->
             <div class="feature">
                 <div class="feature-content">
-                    <h2>Smart Cleanup</h2>
+                    <h2>Declutter</h2>
                     <p>Notes you haven't revisited in 30 days quietly disappear. No guilt. No clutter. Your inbox stays light, your mind stays clear. The secret to mental clarity: thoughts that matter temporarily, not forever.</p>
                 </div>
                 <div class="feature-image">
@@ -603,6 +760,11 @@
                     <img src="assets/magnifyingglass.svg" alt="" class="feature-icon">
                     <h3>Spotlight</h3>
                     <p>Search and open your notes directly from Spotlight. Find what you need instantly without even opening the app.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/command.svg" alt="" class="feature-icon">
+                    <h3>Shortcuts</h3>
+                    <p>Automate your workflow with Shortcuts to capture and manage notes hands-free.</p>
                 </div>
             </div>
         </div>
