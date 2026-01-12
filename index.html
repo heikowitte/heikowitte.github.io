@@ -178,6 +178,7 @@
             padding: 80px 20px;
             background-color: var(--bg-primary);
             overflow: hidden;
+            position: relative;
         }
 
         .section-title {
@@ -412,6 +413,7 @@
         .additional-features {
             padding: 80px 20px 120px;
             background-color: var(--bg-secondary);
+            position: relative;
         }
 
         .features-grid {
@@ -485,8 +487,15 @@
             color: var(--accent);
         }
 
-        .footer-cta {
-            margin-top: 20px;
+        .cta-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: var(--bg-primary);
+        }
+
+        .integration-cta {
+            margin-top: 40px;
+            text-align: center;
         }
 
         /* Responsive Design */
@@ -570,7 +579,7 @@
             <img src="assets/AppIcon-iOS-Dark-256x256@2x.png" alt="Jotio App Icon" class="app-icon dark">
             <h1>Jotio</h1>
             <div class="hero-headline">Capture ideas fast. Keep what matters now.</div>
-            <p class="tagline">A lightweight inbox for quick thoughts: jot in seconds, use Review to surface what matters, and export anything worth keeping. Everything else fades from your inbox after 30 days of inactivity—opening or sharing resets the timer. Removed notes are recoverable for 30 days.</p>
+            <p class="tagline">A lightweight inbox for quick thoughts: jot down in seconds, use Review to surface what matters, and export anything worth keeping. Everything else fades from your inbox after 30 days of inactivity—opening or sharing resets the timer. Removed notes are recoverable for 30 days.</p>
             <a class="cta-button" href="https://testflight.apple.com/join/apjWWgb6">Join Beta on TestFlight</a>
         </div>
     </section>
@@ -648,6 +657,12 @@
         </div>
     </section>
 
+    <section class="cta-section">
+        <div class="container">
+            <a class="cta-button" href="https://testflight.apple.com/join/apjWWgb6">Join Beta on TestFlight</a>
+        </div>
+    </section>
+
     <!-- Problem Section (commented out) -->
     <!--
     <section class="features">
@@ -679,15 +694,6 @@
         </div>
     </section>
     -->
-
-    <!-- Beta CTA Section -->
-    <section class="features">
-        <div class="container">
-            <div class="footer-cta">
-                <a class="cta-button" href="https://testflight.apple.com/join/apjWWgb6">Join Beta on TestFlight</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Additional Features Section -->
     <section class="additional-features">
@@ -729,6 +735,9 @@
                     <h3>Shortcuts</h3>
                     <p>Automate your workflow with Shortcuts to capture and manage notes hands-free.</p>
                 </div>
+            </div>
+            <div class="integration-cta">
+                <a class="cta-button" href="https://testflight.apple.com/join/apjWWgb6">Join Beta on TestFlight</a>
             </div>
         </div>
     </section>
