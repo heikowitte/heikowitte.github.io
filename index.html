@@ -165,6 +165,29 @@
             box-shadow: 0 6px 30px rgba(0, 122, 255, 0.4);
         }
 
+        .app-store-badge {
+            display: inline-block;
+            line-height: 0;
+            border-radius: 14px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-store-badge img {
+            width: 180px;
+            height: auto;
+            display: block;
+        }
+
+        .app-store-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .app-store-badge:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 6px;
+        }
+
         .cta-button.coming-soon {
             cursor: default;
             margin: 0 auto;
@@ -584,7 +607,9 @@
             <h1>Jotio</h1>
             <div class="hero-headline">Capture ideas fast. Keep what matters now.</div>
             <p class="tagline">A lightweight inbox for quick thoughts: jot in seconds, use Review to surface what matters, and export anything worth keeping. Everything else fades from your inbox after 30 days of inactivity—opening or sharing resets the timer. Removed notes are recoverable for 30 days.</p>
-            <a class="cta-button" href="https://testflight.apple.com/join/apjWWgb6">Join Beta on TestFlight</a>
+            <a class="app-store-badge" href="https://apps.apple.com/us/app/jotio/id6757312138" aria-label="Download Jotio on the App Store">
+                <img src="assets/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
         </div>
     </section>
 
@@ -663,7 +688,9 @@
 
     <section class="cta-section">
         <div class="container">
-            <a class="cta-button" href="https://testflight.apple.com/join/apjWWgb6">Join Beta on TestFlight</a>
+            <a class="app-store-badge" href="https://apps.apple.com/us/app/jotio/id6757312138" aria-label="Download Jotio on the App Store">
+                <img src="assets/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
         </div>
     </section>
 
@@ -741,7 +768,9 @@
                 </div>
             </div>
             <div class="integration-cta">
-                <a class="cta-button" href="https://testflight.apple.com/join/apjWWgb6">Join Beta on TestFlight</a>
+                <a class="app-store-badge" href="https://apps.apple.com/us/app/jotio/id6757312138" aria-label="Download Jotio on the App Store">
+                    <img src="assets/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
             </div>
         </div>
     </section>
