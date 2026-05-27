@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press Kit - Jotio</title>
+    <meta name="description" content="Press kit for Jotio — app icons, screenshots, fact sheet, and story angles for journalists and reviewers.">
+    <link rel="canonical" href="https://getjotio.app/press">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Press Kit - Jotio">
+    <meta property="og:description" content="Everything you need to write about Jotio: icons, screenshots, fact sheet, and story angles.">
+    <meta property="og:url" content="https://getjotio.app/press">
+    <meta property="og:image" content="https://getjotio.app/assets/AppIcon-iOS-Default-256x256@2x.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Press Kit - Jotio">
+    <meta name="twitter:description" content="Everything you need to write about Jotio: icons, screenshots, fact sheet, and story angles.">
+    <meta name="twitter:image" content="https://getjotio.app/assets/AppIcon-iOS-Default-256x256@2x.png">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent: #007aff;
+            --accent-hover: #0051d5;
+            --border: #d2d2d7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #000000;
+                --bg-secondary: #1d1d1f;
+                --text-primary: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --accent: #0a84ff;
+                --accent-hover: #409cff;
+                --border: #424245;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-hover);
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 35px;
+            max-width: 640px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin-left: 22px;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 14px 28px;
+            border-radius: 980px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .download-button:hover {
+            background-color: var(--accent-hover);
+            color: #ffffff;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .download-meta {
+            display: inline-block;
+            margin-left: 12px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 14px 28px;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+
+        .fact-grid dt {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .fact-grid dd {
+            color: var(--text-secondary);
+        }
+
+        .quote {
+            border-left: 4px solid var(--accent);
+            padding: 18px 24px;
+            margin: 30px 0;
+            background-color: var(--bg-secondary);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .quote cite {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: normal;
+        }
+
+        .asset-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin: 24px 0 16px;
+        }
+
+        .asset-card {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .asset-card img {
+            width: 96px;
+            height: 96px;
+            border-radius: 22px;
+            display: block;
+            margin: 0 auto 14px;
+        }
+
+        .asset-card .asset-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .asset-card .asset-links {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .asset-card .asset-links a {
+            margin: 0 4px;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .screenshot-grid a {
+            display: block;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .screenshot-grid a:hover {
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        .screenshot-grid img {
+            max-width: 100%;
+            max-height: 220px;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .screenshot-grid .label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .platform-heading {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 28px;
+            margin-bottom: 8px;
+        }
+
+        .contact-box {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 24px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 80px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.1rem; }
+            .fact-grid { grid-template-columns: 1fr; gap: 6px; padding: 22px; }
+            .fact-grid dt { margin-top: 10px; }
+            .download-meta { display: block; margin-left: 0; margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <h1>Press Kit</h1>
+        <p class="lead">Everything you need to write about Jotio — app icons, raw screenshots, a fact sheet, and a few story angles. Free to use in editorial coverage.</p>
+
+        <a href="assets/jotio-press-kit.zip" class="download-button">Download press kit (ZIP)</a>
+        <span class="download-meta">~9 MB · logos, screenshots, text</span>
+
+        <h2>Fact sheet</h2>
+        <dl class="fact-grid">
+            <dt>Name</dt><dd>Jotio</dd>
+            <dt>Tagline</dt><dd>Capture ideas fast. Keep what matters now.</dd>
+            <dt>Category</dt><dd>Productivity / Notes</dd>
+            <dt>Platforms</dt><dd>iPhone, iPad, Mac, Apple Watch (universal app)</dd>
+            <dt>Languages</dt><dd>English, German, French, Spanish, Italian</dd>
+            <dt>Developer</dt><dd>Heiko Witte — Frankfurt, Germany</dd>
+            <dt>Website</dt><dd><a href="https://getjotio.app">getjotio.app</a></dd>
+            <dt>Press contact</dt><dd><a href="mailto:hello@getjotio.app">hello@getjotio.app</a></dd>
+        </dl>
+
+        <h2>About Jotio</h2>
+        <p>Jotio is a fast-capture inbox for your thoughts and ideas — built for notes you don't need to keep. Capture in seconds, review what matters, and move important notes into your long-term apps. Everything else is archived automatically.</p>
+        <p>Plain text only. No formatting, no Markdown, no checklists, no attachments, no complex system. Just a simple place for temporary notes — intentionally kept simple. When something becomes important, move it where it belongs. Everything else fades away.</p>
+        <p>Jotio is universal across the Apple ecosystem. Capture from the iPhone Lock Screen, from a floating window on the Mac, or straight from your Apple Watch. A built-in review flow makes going through your notes effortless, and on-device AI can turn notes into emails, summaries, or action lists — without ever sending your thoughts to a server.</p>
+
+        <h2>Key features</h2>
+        <ul>
+            <li>Fast-capture inbox for fleeting thoughts</li>
+            <li>Plain text only — no Markdown, no formatting, no attachments</li>
+            <li>Colors and favorites instead of folders or tags</li>
+            <li>Built-in review flow plus automatic archiving</li>
+            <li>Lock Screen widgets, app-icon long-press, Shortcuts, Spotlight</li>
+            <li>Floating window and system-wide capture helper on Mac</li>
+            <li>Quick capture from Apple Watch</li>
+            <li>Private on-device AI — notes never leave your device</li>
+            <li>iCloud sync across iPhone, iPad, Mac, and Apple Watch</li>
+        </ul>
+
+        <h2>Story angles</h2>
+        <p>If you're looking for a frame for your review, here are a few angles that make Jotio different from other note apps:</p>
+        <ol>
+            <li><strong>Working memory, not a second brain.</strong> Jotio pushes back against the "capture everything, organize forever" trend. Notes are meant to fade. The act of capturing is what matters, not the archive.</li>
+            <li><strong>No subscription.</strong> One purchase, every device. Notes apps have drifted heavily toward monthly subscriptions; Jotio is a single one-time purchase.</li>
+            <li><strong>Private on-device AI.</strong> Useful AI features — turn a note into an email, a summary, or an action list — without sending a single character to OpenAI, Anthropic, or any other cloud service. Everything runs locally.</li>
+            <li><strong>Built for the whole Apple ecosystem.</strong> A real native experience on iPhone, iPad, Mac, and Apple Watch — not a phone app awkwardly stretched to bigger screens.</li>
+        </ol>
+
+        <h2>From the developer</h2>
+        <div class="quote">
+            <p>"Most note apps assume every thought is worth keeping. Jotio is built on the opposite idea — that the act of capturing is what matters, not the archive."</p>
+            <cite>— Heiko Witte, creator of Jotio</cite>
+        </div>
+
+        <h2>App icon</h2>
+        <p>Please don't crop, recolor, or otherwise modify the icon. PNG, transparent background.</p>
+        <div class="asset-row">
+            <div class="asset-card">
+                <img src="assets/AppIcon-iOS-Default-256x256@2x.png" alt="Jotio app icon, light">
+                <div class="asset-label">Light</div>
+                <div class="asset-links">
+                    <a href="assets/AppIcon-iOS-Default-256x256@2x.png" download>256</a>
+                    <a href="assets/jotio-press-kit.zip">all sizes</a>
+                </div>
+            </div>
+            <div class="asset-card">
+                <img src="assets/AppIcon-iOS-Dark-256x256@2x.png" alt="Jotio app icon, dark">
+                <div class="asset-label">Dark</div>
+                <div class="asset-links">
+                    <a href="assets/AppIcon-iOS-Dark-256x256@2x.png" download>256</a>
+                    <a href="assets/jotio-press-kit.zip">all sizes</a>
+                </div>
+            </div>
+        </div>
+
+        <h2>Screenshots</h2>
+        <p>Raw device screenshots — no marketing frames, no headlines. Crop, scale, or arrange freely. For the full set across iPhone, iPad, Mac, and Apple Watch, grab the <a href="assets/jotio-press-kit.zip">ZIP</a>.</p>
+
+        <div class="platform-heading">iPhone</div>
+        <div class="screenshot-grid">
+            <a href="assets/screenshots/capture-light.PNG" target="_blank"><img src="assets/screenshots/capture-light.PNG" alt="Jotio iPhone — capture screen"><span class="label">Capture</span></a>
+            <a href="assets/screenshots/organize-light.PNG" target="_blank"><img src="assets/screenshots/organize-light.PNG" alt="Jotio iPhone — organize"><span class="label">Organize</span></a>
+            <a href="assets/screenshots/review-light.PNG" target="_blank"><img src="assets/screenshots/review-light.PNG" alt="Jotio iPhone — review"><span class="label">Review</span></a>
+            <a href="assets/screenshots/cleanup-light.PNG" target="_blank"><img src="assets/screenshots/cleanup-light.PNG" alt="Jotio iPhone — cleanup"><span class="label">Cleanup</span></a>
+        </div>
+
+        <h2>Usage</h2>
+        <p>All assets in this kit are free to use in editorial coverage of Jotio — reviews, articles, videos, podcasts. Please don't modify the app icon. Screenshots can be cropped, scaled, or arranged freely. For anything else, just ask.</p>
+
+        <h2>Press contact &amp; promo codes</h2>
+        <div class="contact-box">
+            <p><strong>Heiko Witte</strong><br>
+            <a href="mailto:hello@getjotio.app">hello@getjotio.app</a></p>
+            <p>Reviewers can request free App Store promo codes — just reply with the platform you'd like to cover (iOS, Mac, or both). Happy to answer follow-up questions, jump on a call, or provide additional materials.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="press.html">Press</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <p>&copy; 2026 Jotio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
